@@ -1,0 +1,6 @@
+interface:
+  display_name: "新项目主线程"
+  short_description: "为长期项目初始化、恢复或接管主线程控制层"
+  default_prompt: "Use $project-main-thread to initialize or resume this long-running project."
+policy:
+  allow_implicit_invocation: true

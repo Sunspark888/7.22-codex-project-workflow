@@ -1,0 +1,6 @@
+interface:
+  display_name: "主子线程交接"
+  short_description: "为长期项目派发、执行、回传并验收独立任务"
+  default_prompt: "Use $project-task-handoff to delegate or complete a bounded project task."
+policy:
+  allow_implicit_invocation: true
