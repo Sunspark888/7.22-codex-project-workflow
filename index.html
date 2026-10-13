@@ -1,137 +1,23 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f5f7f3" />
-  <meta name="description" content="PMR 专注大项目治理。让长期 AI 项目的事实、决策、实验、来源与待议事项持续可追溯。探索理念、分层记忆与交互演示。" />
-  <meta property="og:title" content="PMR — 专注大项目治理" />
-  <meta property="og:description" content="项目再长，也不该每次从头开始。可继承的上下文，可追溯的决策。" />
-  <meta property="og:type" content="website" />
-  <title>PMR — 专注大项目治理｜Sunspark</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="./app.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f7f3"><meta name="description" content="PMR——专注大项目治理。把漫长项目里的决定、实验、历史与待议，变成可恢复、可追溯、可维护的项目记忆。">
+<meta property="og:type" content="website"><meta property="og:title" content="PMR · 专注大项目治理"><meta property="og:description" content="项目很长，记忆不能断。Sunspark 的长期项目治理实验。">
+<title>PMR — 专注大项目治理 · Sunspark</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-  <a href="#main" class="skip-link">跳转到正文</a>
-  <div class="ambient-glow" aria-hidden="true"></div>
-  <header class="site-header" id="top">
-    <div class="shell header-inner">
-      <a href="#top" class="brand" aria-label="PMR 返回首页">
-        <span class="brand-symbol" aria-hidden="true"><span>P</span></span>
-        <span class="brand-text"><b>PMR</b><small>PROJECT GOVERNANCE</small></span>
-      </a>
-      <nav class="main-nav" aria-label="主导航" id="main-nav">
-        <a href="#why">为什么</a>
-        <a href="#architecture">架构</a>
-        <a href="#demo">交互演示</a>
-        <a href="#principles">维护原则</a>
-      </nav>
-      <div class="header-action">
-        <a class="nav-repo" href="https://github.com/Sunspark888" target="_blank" rel="noopener noreferrer" aria-label="访问 Sunspark GitHub 主页">GitHub <span aria-hidden="true">↗</span></a>
-        <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="展开菜单" type="button"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero-section shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="signal-dot"></span> PMR / A SYSTEM FOR LONG PROJECTS <span class="tiny-line"></span> 实验性项目</div>
-        <h1 id="hero-title">项目再长，<br /><span class="serif-accent">也不该每次</span><br /><em>从头开始。</em></h1>
-        <p class="hero-desc">对话会结束，项目不会。PMR 尝试把长期项目中的事实、推理、实验与决策，组织成<strong>可追溯、可继承、可持续维护</strong>的工作上下文。</p>
-        <div class="hero-buttons">
-          <a class="btn btn-dark" href="#demo">探索交互演示 <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-outline" href="#architecture">了解 PMR 架构 <span aria-hidden="true">↓</span></a>
-        </div>
-        <div class="hero-footnote"><span class="outlined-dot"></span> 设计理念与交互原型公开展示 · 私人研究数据不在本站发布</div>
-      </div>
-      <div class="hero-visual" aria-label="PMR 长期记忆与决策关联的视觉展示">
-        <div class="visual-grain" aria-hidden="true"></div>
-        <div class="visual-topline"><span class="visual-logo">P</span><span>PROJECT MEMORY</span><span class="mono">CANONICAL VIEW / 01</span></div>
-        <div class="visual-headline">今天的决定，<br /><i>知道昨天为什么。</i></div>
-        <div class="visual-journey">
-          <div class="journey-node"><span class="journey-index">01</span><span class="journey-icon">⌁</span><div><b>研究问题</b><small>目标与约束明确</small></div></div>
-          <div class="journey-connector"><span></span><span>源记录</span></div>
-          <div class="journey-node"><span class="journey-index">02</span><span class="journey-icon">◫</span><div><b>方案与实验</b><small>记录结果与失败路线</small></div></div>
-          <div class="journey-connector"><span></span><span>证据链</span></div>
-          <div class="journey-node is-active"><span class="journey-index">03</span><span class="journey-icon">↗</span><div><b>当前决策</b><small>承接历史，不重复判断</small></div><span class="is-current">CURRENT</span></div>
-        </div>
-        <div class="visual-bottomline"><span>REASONING OVER TIME</span><span>2026 / SUNSPARK</span></div>
-      </div>
-    </section>
-
-    <div class="horizon-mark shell" aria-hidden="true"><span>01 — THE PROBLEM</span><i></i><span>SCROLL TO EXPLORE ↓</span></div>
-
-    <section class="why-section section-pad" id="why" aria-labelledby="why-title">
-      <div class="shell">
-        <div class="section-heading two-col-heading">
-          <div><span class="section-kicker">01 / 为什么需要 PMR</span><h2 id="why-title">我们解决的，<br />不只是<strong>“记不住”。</strong></h2></div>
-          <p>真正的问题是：信息虽然留在聊天记录里，后来接手的 Agent 却不一定知道哪些事实仍有效，哪条路线已经失败，以及当时究竟为什么做出那个决定。</p>
-        </div>
-        <div class="pain-grid">
-          <article class="pain-card"><span class="pain-index">01</span><div class="pain-symbol">◷</div><h3>上下文会耗尽</h3><p>长项目跨越数月，下一段对话很容易重新走一遍已经解决的问题。</p><span class="pain-remedy">→ 形成可恢复的项目入口</span></article>
-          <article class="pain-card"><span class="pain-index">02</span><div class="pain-symbol">⌁</div><h3>结论会混淆</h3><p>早期猜想、测试结果、最终决定经常散落各处，时间顺序被压平。</p><span class="pain-remedy">→ 保留来源、状态与时间</span></article>
-          <article class="pain-card"><span class="pain-index">03</span><div class="pain-symbol">▦</div><h3>工作量看不见</h3><p>几十项实验、被放弃的方案、长时间的排查，在最后摘要中消失。</p><span class="pain-remedy">→ 把历程与证据一起展示</span></article>
-          <article class="pain-card"><span class="pain-index">04</span><div class="pain-symbol">⇄</div><h3>Agent 接力不稳定</h3><p>不同模型可能重做界面、误改历史，或者把未批准事项当成任务执行。</p><span class="pain-remedy">→ 固定渲染与局部维护规则</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="architecture-section section-pad shell" id="architecture" aria-labelledby="architecture-title">
-      <div class="section-heading"><span class="section-kicker">02 / 信息如何组织</span><h2 id="architecture-title">不是把所有历史<br />都塞回上下文。</h2><p class="section-intro">每次只读取当前问题真正需要的深度。PMR 把机器接力与人的理解放在一套来源体系上。</p></div>
-      <div class="architecture-layout">
-        <div class="layer-list" role="tablist" aria-label="查看记忆层级">
-          <button class="layer-row selected" type="button" role="tab" id="layer-tab-0" aria-controls="layer-panel" aria-selected="true" data-layer="0"><span class="layer-code">L1</span><span class="layer-txt"><b>当前认知</b><small>现在相信什么、处于什么状态</small></span><span class="layer-arrow">↗</span></button>
-          <button class="layer-row" type="button" role="tab" id="layer-tab-1" aria-controls="layer-panel" aria-selected="false" data-layer="1"><span class="layer-code">L2</span><span class="layer-txt"><b>决策与研究历程</b><small>做过什么、为什么选、为什么放弃</small></span><span class="layer-arrow">↗</span></button>
-          <button class="layer-row" type="button" role="tab" id="layer-tab-2" aria-controls="layer-panel" aria-selected="false" data-layer="2"><span class="layer-code">L3</span><span class="layer-txt"><b>执行上下文</b><small>下一步要处理什么、应该怎么接力</small></span><span class="layer-arrow">↗</span></button>
-          <button class="layer-row" type="button" role="tab" id="layer-tab-3" aria-controls="layer-panel" aria-selected="false" data-layer="3"><span class="layer-code">L4</span><span class="layer-txt"><b>原始来源</b><small>原文、附件、数据与真实执行记录</small></span><span class="layer-arrow">↗</span></button>
-        </div>
-        <div class="layer-detail" id="layer-panel" role="tabpanel" aria-labelledby="layer-tab-0" tabindex="0" aria-live="polite"><div class="layer-detail-top"><span>MEMORY / <strong id="layer-number">L1</strong></span><span class="layer-current">按需加载</span></div><div class="layer-detail-main"><div class="layer-detail-orbit" aria-hidden="true"><span>01</span></div><h3 id="layer-title">把当前状态说清楚。</h3><p id="layer-body">记录仍然有效的目标、约束、科学判断与待处理问题。下一位 Agent 先知道“现在在哪里”，再判断是否需要下钻历史。</p><div class="layer-examples"><span>示意字段</span><div id="layer-chips"><i>当前目标</i><i>约束条件</i><i>有效结论</i></div></div></div><div class="layer-bottom"><span>不同问题，读取不同层级</span><span>PMR / 01—04</span></div></div>
-      </div>
-      <div class="bridge-statement"><span class="bridge-glyph">✳</span><p>关键不是“无限记忆”，而是<strong>让事实、决策与证据保持连接。</strong></p><span class="bridge-caption">ONE SOURCE · MULTIPLE READERS</span></div>
-    </section>
-
-    <section class="demo-section section-pad" id="demo" aria-labelledby="demo-title">
-      <div class="shell">
-        <div class="section-heading demo-heading"><div><span class="section-kicker">03 / 交互演示</span><h2 id="demo-title">打开一个项目，<br />看看 PMR 如何工作。</h2></div><div class="demo-overview"><span class="demo-signal"><span></span> PUBLIC DEMO</span><p>这里使用虚构示例，演示真实的信息组织方式。<br />不包含私人实验数据、聊天或内部文档。</p></div></div>
-        <div class="demo-window">
-          <div class="window-header"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="window-address">pmr / demo / sample-research</div><div class="window-status"><span></span> READ ONLY</div></div>
-          <div class="demo-workspace">
-            <aside class="demo-sidebar" aria-label="演示视图选择"><div class="demo-sidebar-top"><span class="demo-project-icon">P</span><div><strong>示例研究项目</strong><small>PUBLIC SAMPLE</small></div></div><span class="demo-sidebar-caption">PROJECT MEMORY</span>
-              <button type="button" data-demo-tab="timeline" class="demo-nav-btn active" aria-pressed="true"><span>◴</span> 研究历程 <small>04</small></button>
-              <button type="button" data-demo-tab="experiments" class="demo-nav-btn" aria-pressed="false"><span>▤</span> 实验全景 <small>03</small></button>
-              <button type="button" data-demo-tab="decisions" class="demo-nav-btn" aria-pressed="false"><span>◇</span> 决策记录 <small>02</small></button>
-              <button type="button" data-demo-tab="pending" class="demo-nav-btn" aria-pressed="false"><span>◌</span> 待议事项 <small>02</small></button>
-              <div class="demo-sidebar-bottom">内容为演示样例<br />不对应任何真实科研项目</div>
-            </aside>
-            <div class="demo-main">
-              <div class="demo-main-head"><div><span class="demo-crumb">PROJECT / OVERVIEW</span><h3 id="demo-section-title">沿着论文问题，还原研究历程。</h3><p id="demo-section-description">阶段是阅读入口，原始事实和时间顺序不会被重写。</p></div><div class="demo-label">DEMO DATA</div></div>
-              <div class="demo-panel-content" id="demo-panel" aria-live="polite"></div>
-            </div>
-          </div>
-        </div>
-        <div class="demo-caption"><span>↖</span> 点击左侧导航和内容卡片，切换视图与证据详情 <span class="demo-note">本演示不保存数据、不连接私人资料</span></div>
-      </div>
-    </section>
-
-    <section class="principles-section section-pad shell" id="principles" aria-labelledby="principles-title">
-      <div class="section-heading two-col-heading"><div><span class="section-kicker">04 / 维护不会失控</span><h2 id="principles-title">能交接，<br />才算真的留下来。</h2></div><p>PMR 的价值不是某一次 AI 做出漂亮页面，而是下一次接手时仍能保留科学事实、用户认可的结构与历史选择。</p></div>
-      <div class="principles-grid">
-        <div class="principle"><span>01 / PROVENANCE</span><h3>先找来源，再写结论</h3><p>事实、决定、评价和猜想分开存放。没有来源，不把推测写成真值。</p></div>
-        <div class="principle"><span>02 / CONTINUITY</span><h3>记住改变，而非覆盖过去</h3><p>保留早期方案与失败证据，让后来的人能理解转折发生在哪里。</p></div>
-        <div class="principle"><span>03 / MAINTENANCE</span><h3>只改需要改的部分</h3><p>认可过的实验表与视觉结构默认不重做；小更新无需整站返工。</p></div>
-        <div class="principle"><span>04 / REUSE</span><h3>程序管版式，Agent 管内容</h3><p>使用固定渲染与结构化输入，降低不同模型造成的显示漂移。</p></div>
-        <div class="principle"><span>05 / BOUNDARY</span><h3>批准、候选与待议分清楚</h3><p>已讨论不等于已执行；已经解决的历史问题也不自动重新打开。</p></div>
-        <div class="principle"><span>06 / PRIVACY</span><h3>公开演示与私有记忆隔离</h3><p>公开站只包含已选择公开的理念、代码与虚构样例，私有数据留在授权环境中。</p></div>
-      </div>
-    </section>
-
-    <section class="workflow-section shell" aria-labelledby="workflow-title"><div class="workflow-inner"><div class="workflow-top"><div><span class="section-kicker">05 / WORKFLOW</span><h2 id="workflow-title">每一次接力，<br />都有迹可循。</h2></div><p>PMR 当前是正在迭代的工程原型。它试图把 GPT 的判断、Agent 的执行与真实资料的追溯串成闭环，而不是声称记忆永不出错。</p></div><div class="workflow-steps"><div class="workstep"><span>01</span><strong>恢复</strong><small>读取项目当前状态</small></div><div class="workarrow">→</div><div class="workstep"><span>02</span><strong>定位</strong><small>找到相关证据</small></div><div class="workarrow">→</div><div class="workstep"><span>03</span><strong>判断</strong><small>识别变化与边界</small></div><div class="workarrow">→</div><div class="workstep"><span>04</span><strong>更新</strong><small>最小范围写入</small></div><div class="workarrow">→</div><div class="workstep"><span>05</span><strong>验证</strong><small>回读并保留历史</small></div></div></div></section>
-
-    <section class="closing-section shell"><div class="closing-topline"><span>PMR / BY SUNSPARK</span><span>BUILDING IN PUBLIC, CAREFULLY.</span></div><div class="closing-layout"><h2>让长期项目，<br /><em>拥有自己的记忆。</em></h2><div class="closing-right"><p>PMR 仍在持续探索。我们正在验证：如何让不同 Agent 在上下文有限、能力不同的情况下，持续维护同一份可信的项目认知。</p><a class="btn btn-dark" href="mailto:j1286476728@gmail.com?subject=PMR%20交流">联系 Sunspark <span aria-hidden="true">↗</span></a></div></div></section>
-  </main>
-  <footer class="site-footer"><div class="shell footer-grid"><div><div class="footer-logo"><span>P</span><b>PMR</b></div><p>专注大项目治理</p></div><div class="footer-links"><a href="#top">返回顶部 ↑</a><a href="https://github.com/Sunspark888" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="mailto:j1286476728@gmail.com">联系邮箱 ↗</a></div><div class="footer-copy">© 2026 Sunspark<br />公开演示 · 非科研原始结果</div></div></footer>
-</body>
-</html>
+<body class="landing">
+<a class="skip-link" href="#main">跳转到内容</a>
+<header class="topbar"><div class="nav-wrap shell"><a class="brand" href="./" aria-label="PMR首页"><span class="brand-mark">P<span class="brand-dot"></span></span><span><strong>PMR</strong><small>PROJECT MEMORY & REASONING</small></span></a><nav aria-label="主导航"><a href="#why">为什么 PMR</a><a href="#how">工作方式</a><a href="#principles">设计准则</a><a href="demo/">交互演示</a></nav><a class="nav-cta" href="demo/">探索图鉴 <span aria-hidden="true">↗</span></a><button class="mobile-menu" id="menu-toggle" type="button" aria-expanded="false" aria-label="展开导航">☰</button></div></header>
+<main id="main">
+<section class="hero shell"><div class="hero-left"><div class="eyebrow"><span class="signal"></span> SUNSPARK · LONG-PROJECT INTELLIGENCE <span class="rule-dash"></span> 2026</div><h1>项目很长。<br><em>记忆不能断。</em></h1><p class="hero-lead">复杂项目最难的，不只是找到资料。<br>而是让下一个 AI，真正明白你<strong>已经做过什么、为什么这样决定，以及接下来该做什么。</strong></p><div class="hero-actions"><a class="primary-action" href="demo/">体验研究图鉴 <span>↗</span></a><a class="text-action" href="#how">了解 PMR 如何工作 <span>↓</span></a></div><div class="hero-foot"><span class="stacked-dots"><i></i><i></i><i></i></span><span>一个持续演进的个人研发项目<br>从真实科研的长周期协作中诞生</span></div></div>
+<div class="hero-right" aria-label="PMR项目图鉴产品演示画面"><div class="console-glow"></div><div class="console"><div class="console-top"><div class="console-brand"><span class="monogram">P</span><span><b>PMR</b><small>研究图鉴 / 项目 A</small></span></div><span class="online"><span></span> 记忆已接续</span></div><div class="console-body"><div class="console-overline">PROJECT CONTEXT <span>01 / 04</span></div><h2>每一次转折，<br>都有来路。</h2><p>不只保存结论，也保存理由、被否决的方案和后来改变了什么。</p><div class="journey-trace"><div class="step reached"><span>01</span><b>研究问题</b><small>明确目标</small></div><div class="trace-link"></div><div class="step reached"><span>02</span><b>方法构建</b><small>双路径</small></div><div class="trace-link"></div><div class="step current"><span>03</span><b>实验验证</b><small>证据对比</small></div><div class="trace-link"></div><div class="step"><span>04</span><b>结论与边界</b><small>持续更新</small></div></div><div class="console-answer"><span class="mini-label">已保存的判断</span><div class="answer-row"><span class="checkmark">✓</span><div><b>保留完整决策链</b><small>方案 · 理由 · 证据 · 时间</small></div><span class="answer-arrow">↗</span></div><div class="answer-row"><span class="checkmark">✓</span><div><b>按需查阅相关实验</b><small>分组 · 表格 · 结果对比</small></div><span class="answer-arrow">↗</span></div></div></div></div><span class="console-caption">INTERACTIVE RESEARCH ATLAS / CONCEPT VIEW</span></div></section>
+<div class="edge-band"><div class="shell band-row"><div><span class="band-number">01</span><span>找回上下文</span></div><div><span class="band-number">02</span><span>恢复决策逻辑</span></div><div><span class="band-number">03</span><span>继续真实执行</span></div><div><span class="band-number">04</span><span>沉淀项目资产</span></div></div></div>
+<section class="section shell section-why" id="why"><div class="section-label"><span>01 / THE PROBLEM</span><span class="line"></span></div><div class="section-lead"><div><h2>记住很多，<br><em>不等于真正理解。</em></h2></div><p>当一次项目跨越几个月、几十轮对话、数百份资料，新对话最容易出现的不是“找不到文件”，而是<strong>丢失因果关系与决策上下文</strong>。PMR 就从这个问题开始。</p></div><div class="problem-grid"><article class="problem-card"><span class="problem-icon">01 <span>↗</span></span><h3>历史容易被压扁</h3><p>摘要只留下“最后选了什么”，却抹掉了曾经失败的路线和改变主意的原因。</p><span class="problem-bottom">HISTORY ≠ SUMMARY</span></article><article class="problem-card"><span class="problem-icon">02 <span>↗</span></span><h3>AI 容易重新开题</h3><p>后来接手的模型不知道哪些方案已经测试、否定、冻结，重复走过的弯路。</p><span class="problem-bottom">CONTEXT ≠ CONTINUITY</span></article><article class="problem-card"><span class="problem-icon">03 <span>↗</span></span><h3>资料多，证据却散</h3><p>结果、原话、表格、决策分散在不同对话和附件中，很难一次找齐。</p><span class="problem-bottom">RETRIEVAL ≠ JUDGMENT</span></article></div></section>
+<section class="section-how" id="how"><div class="shell"><div class="section-label inverse"><span>02 / THE WORKFLOW</span><span class="line"></span></div><div class="how-heading"><h2>一个项目，<br>一条可以接续的思路。</h2><p>PMR 不试图取代 AI 的推理。它给推理提供可靠的历史、已确认的事实和明确的执行边界。</p></div><div class="pipeline"><div class="pipe-item"><span class="pipe-index">01 / INGEST</span><span class="pipe-icon">↳</span><h3>收集</h3><p>对话、文件、实验、执行记录按原始来源保留。</p></div><div class="pipe-arrow">→</div><div class="pipe-item"><span class="pipe-index">02 / DISTILL</span><span class="pipe-icon">⌁</span><h3>提炼</h3><p>形成项目现状、历史决策、待议问题与证据索引。</p></div><div class="pipe-arrow">→</div><div class="pipe-item"><span class="pipe-index">03 / RECALL</span><span class="pipe-icon">◎</span><h3>恢复</h3><p>按问题查阅相关内容，而不是一次塞进全部资料。</p></div><div class="pipe-arrow">→</div><div class="pipe-item"><span class="pipe-index">04 / CONTINUE</span><span class="pipe-icon">↗</span><h3>接续</h3><p>新的 AI 延续判断，执行结果再回到项目记忆。</p></div></div><div class="how-bottom"><div><strong>记忆不是第二套真相。</strong><span>事实以原始资料和经过确认的项目记录为准。</span></div><a href="demo/">在交互示例中体验这个过程 <span>↗</span></a></div></div></section>
+<section class="section shell gallery-section"><div class="section-label"><span>03 / RESEARCH ATLAS</span><span class="line"></span></div><div class="gallery-grid"><div class="gallery-copy"><h2>复杂工作，<br><em>值得被看懂。</em></h2><p>真正有价值的项目记忆，不该只是一份给 AI 看的 Markdown。人也应该能轻松浏览半年的研究、几十项实验，以及每次关键抉择。</p><a class="primary-action compact" href="demo/">打开交互图鉴 <span>↗</span></a></div><div class="feature-stack"><article><span>01</span><div><h3>按论文逻辑阅读研究历程</h3><p>保留原始时间与记录，只重新组织阅读入口。</p></div><span class="feature-arrow">↗</span></article><article><span>02</span><div><h3>把相关实验放在一起比较</h3><p>保留证据身份，一张图表看清结果与适用范围。</p></div><span class="feature-arrow">↗</span></article><article><span>03</span><div><h3>让“待议”持续可见</h3><p>完成的事情不反复重开，未解决的事情不被遗忘。</p></div><span class="feature-arrow">↗</span></article></div></div></section>
+<section class="principles" id="principles"><div class="shell"><div class="section-label"><span>04 / DESIGN PRINCIPLES</span><span class="line"></span></div><h2>好记忆系统的关键，<br>不是记录得更多。</h2><div class="principles-list"><div><span>01</span><h3>保留历史，不改写历史</h3><p>当前判断可以更新，但旧决策、失败实验和原话必须可追溯。</p></div><div><span>02</span><h3>模型做理解，程序守住呈现</h3><p>数据与页面结构分离；维护者可以换，体验不该随模型漂移。</p></div><div><span>03</span><h3>不做无意义的频繁写入</h3><p>重要变化才整理；没变化就继续做事，把时间用在实际成果上。</p></div><div><span>04</span><h3>找到材料，还要找齐材料</h3><p>不把检索排名当答案；关联证据不足就继续查，并明确没查到什么。</p></div></div></div></section>
+<section class="closing shell"><div class="closing-main"><span class="eyebrow">PMR / SUNSPARK</span><h2>让下一次对话，<br>从你离开的地方开始。</h2><p>现在可以体验一个公开、安全的示例图鉴。它展示了 PMR 如何组织项目，而不公开真实项目中的私人对话、内部资料或未发布实验数据。</p><a class="primary-action" href="demo/">立即体验 PMR <span>↗</span></a></div><div class="closing-art" aria-hidden="true"><span class="orbit o1"></span><span class="orbit o2"></span><span class="orbit o3"></span><span class="orbit-center">P</span><span class="orbit-label">REMEMBER <b>→</b> REASON <b>→</b> CONTINUE</span></div></section>
+</main><footer class="site-footer"><div class="shell footer-row"><div><strong>PMR</strong><span>专注大项目治理</span></div><div><span>作者：Sunspark</span><a href="mailto:j1286476728@gmail.com">j1286476728@gmail.com</a><a href="https://github.com/Sunspark888" target="_blank" rel="noopener">GitHub ↗</a></div><p>© 2026 Sunspark · Independent R&D Project</p></div></footer>
+<script src="assets/site.js" defer></script>
+</body></html>

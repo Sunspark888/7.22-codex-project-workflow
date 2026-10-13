@@ -1,16 +1,27 @@
-# 部署说明
+# PMR 公开静态网站部署
+
+## 静态目录
+
+根目录包含 `index.html`，站内 `demo/` 与 `assets/` 为相对路径。不要移动这三个目录的位置，除非同步改 HTML 路径。
+
+## GitHub Pages
+
+现有公开仓库：`Sunspark888/7.22-codex-project-workflow`，专用分支：`gh-pages`。
+
+1. 打开仓库的 **Settings → Pages**。
+2. Build and deployment 下选 **Deploy from a branch**。
+3. 选 `gh-pages` 和 `/(root)`，点 **Save**。
+4. 等 GitHub 提供访问 URL，再检查主页和 `/demo/` 六区导航。
+
+该分支与主分支隔离，旧公开代码可通过 Git 提交历史回滚。未来可以转移到独立 PMR 专用仓库和自定义域名。
 
 ## Vercel
 
-1. 新建 Project，导入 GitHub 公共仓库 `Sunspark888/7.22-codex-project-workflow`。
-2. 在 Project Settings → Git → Production Branch 设为 `gh-pages`（该分支只含 PMR 产品站）。
-3. 框架选择 Other，Build Command 留空，Output Directory 留空或 `.`。
-4. Deploy 后使用 Vercel 给出的正式 URL，并验证首页与 `/demo/`。
+连接 Vercel 后可用静态项目：Framework Preset = Other；Root Directory = 根目录；Build Command 留空；Output Directory 保持根目录。可沿用 `vercel.json` 的安全响应头。部署后再实际访问核对。
 
-## GitHub Pages（备用）
+## 上线最小验收
 
-此仓库 `gh-pages` 分支仅包含网站，不影响 `main` 的现有工作流项目。
-
-仓库 Settings → Pages → Build and deployment → Source = Deploy from a branch → Branch = `gh-pages`、目录 `/(root)` → Save。
-
-站点通常对应 https://sunspark888.github.io/7.22-codex-project-workflow/ ，只有在托管平台报告已发布且实际访问成功后，才能称为 live。
+- 主页样式、文字正常；演示 `demo/` 有布局而非裸 HTML。
+- 六区切换、图表、筛选和 CSV 导出正常；移动端没有横向溢出。
+- 合成数据明确标为虚构；未公开任何私有原文、Drive 链接或未经授权的科研图表。
+- 公开 URL 能通过未登录的普通浏览器打开，才可声明 `LIVE`。
