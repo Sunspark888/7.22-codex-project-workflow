@@ -5,6 +5,7 @@ import {loadSharp,requireScoreFont} from './runtime.mjs';
 import {settings} from './settings.mjs';
 import {rapidSegments} from './rapid_timeline.mjs';
 import {validateSourceReview} from './validate_source_review.mjs';
+import {scoreCredit} from './source_credit.mjs';
 
 await requireScoreFont();
 const sharp=loadSharp();
@@ -15,6 +16,7 @@ const manifestPath=path.resolve(process.argv[2]||'');
 if(!process.argv[2]||!fs.existsSync(manifestPath))throw new Error('Usage: render_score.mjs MANIFEST.json');
 const base=path.dirname(manifestPath);
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+scoreCredit(manifest);
 if(!manifest.song?.title||!Array.isArray(manifest.pages))throw new Error('manifest requires song.title and pages[]');
 if(manifest.schema_version!==2)throw new Error('manifest.schema_version must be 2; legacy or screenshot-driven manifests must be audited before final rendering');
 if(manifest.canvas?.width!==2160||manifest.canvas?.height!==1080)throw new Error('canvas must be the fixed 2160x1080 three-system playback-page size');

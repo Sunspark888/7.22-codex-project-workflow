@@ -3,11 +3,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {loadSharp} from './runtime.mjs';
 import {settings} from './settings.mjs';
+import {scoreCredit} from './source_credit.mjs';
 const sharp=loadSharp(); sharp.cache(false);
 const file=process.argv[2];
 if(!file)throw new Error('Usage: render_cover.mjs MANIFEST.json');
 const base=path.dirname(path.resolve(file)),m=JSON.parse(fs.readFileSync(file,'utf8'));
 if(m.schema_version!==2||!m.song?.title)throw new Error('schema_version 2 and song.title required');
+const credit=scoreCredit(m);
 const c=settings(m).cover,W=c.width,H=c.height;
 const resolve=p=>p?path.resolve(base,p):null;
 const out=process.env.SKY_SCORE_OUTPUT_DIR?path.resolve(process.env.SKY_SCORE_OUTPUT_DIR):resolve(m.output_dir||'final');
@@ -16,7 +18,7 @@ if(art&&!fs.existsSync(art))throw new Error('missing cover_art: '+art);
 if(!art&&!m.demo&&c.style!=='minimal')throw new Error('Provide cover_art matching the selected style, or explicitly choose minimal. Do not silently replace missing art.');
 const font=resolve(m.cover_font_file),titleFont=resolve(m.cover_title_font_file)||font;
 for(const f of [font,titleFont])if(f&&!fs.existsSync(f))throw new Error('missing font: '+f);
-if(/[^\u0000-\u024f]/.test(m.song.title+(m.song.subtitle||'')+(m.song.start_note||''))&&!font)throw new Error('Non-Latin cover text requires cover_font_file and cover_font_family for installed/available font glyphs');
+if(/[^\u0000-\u024f]/.test(m.song.title+(m.song.subtitle||'')+(m.song.start_note||'')+credit.text)&&!font)throw new Error('Non-Latin cover text requires cover_font_file and cover_font_family for installed/available font glyphs');
 if(font&&!m.cover_font_family)throw new Error('Provide cover_font_family matching cover_font_file (e.g. Noto Sans CJK SC)');
 if(m.cover_title_font_file&&!m.cover_title_font_family)throw new Error('Provide cover_title_font_family matching cover_title_font_file');
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
@@ -34,8 +36,13 @@ for(const [text,size,fontfile,family] of entries){
 }
 const gap=Math.max(12,Math.round(35*scale)),total=blocks.reduce((n,b)=>n+b.height,0)+gap*(blocks.length-1);
 if(total>H*.7)throw new Error('Cover text is too tall; shorten subtitle or select a larger cover');
-let y=Math.round(center?(H-total)/2:H-H*.09-total);
+let y=Math.round(center?(H-total)/2:H-H*.16-total);
 for(const b of blocks){layers.push({input:b.raster,left:center?Math.round((W-b.width)/2):pad,top:y});y+=b.height+gap;}
+let byline=await sharp({text:{text:`<span foreground="${ink}">${esc(credit.text)}</span>`,font:`${m.cover_font_family||'DejaVu Sans'} ${Math.max(16,Math.round(42*scale))}`,...(font?{fontfile:font}:{}),rgba:true}}).png().toBuffer();
+let bylineMeta=await sharp(byline).metadata();
+if(bylineMeta.width>maxW){byline=await sharp(byline).resize({width:maxW}).png().toBuffer();bylineMeta=await sharp(byline).metadata();}
+if(bylineMeta.height>H*.08)throw new Error('Source author credit is too tall for the cover; shorten the display name without losing attribution');
+layers.push({input:byline,left:W-pad-bylineMeta.width,top:H-pad-bylineMeta.height});
 const background=art?await sharp(art).resize(W,H,{fit:'cover'}).png().toBuffer():await sharp({create:{width:W,height:H,channels:4,background:c.style==='fresh'?'#eaf5e7':'#eef7ff'}}).png().toBuffer();
 const result=await sharp(background).composite(layers).png().toBuffer();await sharp(result).stats();
 fs.mkdirSync(out,{recursive:true});

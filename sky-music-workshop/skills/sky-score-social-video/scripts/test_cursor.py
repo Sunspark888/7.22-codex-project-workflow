@@ -19,7 +19,7 @@ class CursorTests(unittest.TestCase):
     im=Image.new('RGB',(2160,1080),'white');ImageDraw.Draw(im).rectangle((200+500*n,100,400+500*n,400),fill='black');im.save(root/f'p{n}.png')
    Image.new('RGB',(300,200),'navy').save(root/'cover.png')
    subprocess.run(['ffmpeg','-v','error','-f','lavfi','-i','color=c=blue:s=736x512:r=30:d=0.6','-f','lavfi','-i','sine=frequency=440:duration=0.6','-c:v','libx264','-c:a','aac','-y',str(root/'source.mp4')],check=True)
-   d=dict(cover='cover.png',pages=['p0.png','p1.png'],segments=[dict(path='source.mp4',start=0,end=.2),dict(path='source.mp4',start=.3,end=.5)],audio='audio.wav',anchors=[dict(t=0,page=0,row=0,top=98,x=120),dict(t=.2,page=1,row=0,top=98,x=120)],output='out.mp4')
+   d=dict(score_source=dict(author='Synthetic fixture',basis='Generated test inputs'),cover='cover.png',pages=['p0.png','p1.png'],segments=[dict(path='source.mp4',start=0,end=.2),dict(path='source.mp4',start=.3,end=.5)],audio='audio.wav',anchors=[dict(t=0,page=0,row=0,top=98,x=120),dict(t=.2,page=1,row=0,top=98,x=120)],output='out.mp4')
    mf=root/'project.json';mf.write_text(json.dumps(d))
    subprocess.run(['python',str(Path(__file__).with_name('render_edit_audio.py')),str(mf)],check=True)
    c.validate(mf);c.render(mf)

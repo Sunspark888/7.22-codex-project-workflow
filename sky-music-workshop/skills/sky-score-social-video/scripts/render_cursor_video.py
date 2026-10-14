@@ -4,12 +4,14 @@ import argparse,bisect,json,subprocess,os,math,shutil
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont,ImageFilter,ImageOps,ImageEnhance
 import numpy as np
+from source_credit import score_credit,credit_cover
 
 def probe(path):
  return json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(path)]))
 
 def validate(path):
- path=Path(path).resolve();root=path.parent;d=json.loads(path.read_text());res=lambda p:str((root/p).resolve())
+ path=Path(path).resolve();root=path.parent;d=json.loads(path.read_text(encoding='utf-8'));res=lambda p:str((root/p).resolve())
+ score_credit(d)
  if not all(shutil.which(x) for x in ('ffmpeg','ffprobe')):raise ValueError('Install ffmpeg and ffprobe')
  if not d.get('pages') or not d.get('segments') or not d.get('anchors'):raise ValueError('pages, segments and anchors cannot be empty')
  for p in [d['cover'],*d['pages']]:
@@ -64,7 +66,7 @@ def render(path):
  assert all(0<=a['page']<len(pages) for a in anchors)
  cover=Image.open(res(d['cover'])).convert('RGB');cover.load()
  bg=ImageEnhance.Brightness(ImageOps.fit(cover,(1920,1080)).filter(ImageFilter.GaussianBlur(36))).enhance(.38)
- bg.paste(ImageOps.fit(cover,(530,530)),(1343,32))
+ bg.paste(credit_cover(ImageOps.fit(cover,(530,530)),d,Path(path).resolve().parent),(1343,32))
  bases=[];scores=[];masks=[]
  for p in pages:
   im=Image.open(res(p)).convert('RGB');im.load();im=im.resize((1240,620),Image.Resampling.LANCZOS)

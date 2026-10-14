@@ -1,4 +1,9 @@
 {
+  "score_source": {
+    "author": "",
+    "basis": "",
+    "font_file": "assets/chinese-font.ttf"
+  },
   "project": {
     "song": "示例曲名",
     "version": "v01"

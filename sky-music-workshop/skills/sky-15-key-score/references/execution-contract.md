@@ -4,6 +4,8 @@
 
 用户说“做谱子”并提供截图：默认完整转录和标准图片交付。用户指出错误：定位来源页／行与输出页／行，检查同类错误并更新受影响输出。用户明确“先看方案”“只做样张”“本版先不改”：严格遵守范围。视频发布任务转交 sky-score-social-video；两个 Skill 共享确认过的琴谱，不能各自猜音符。
 
+原谱作者为强制输入，须有原图署名或用户确认依据。未知时先询问作者，可进行内部转录草稿，但最终出图前必须补齐`score_source.author`和`basis`。封面写小号`by:作者名`；不能用整理者/演奏者/宣传作者替换原谱作者。
+
 ## 启动与恢复
 
 1. 把当前加载的 Skill 根目录记为 SKILL_ROOT；读取本目录规范，调用本目录脚本。其他同名目录、旧聊天代码不属于本次有效实现。
@@ -24,7 +26,7 @@
 node "$SKILL_ROOT/scripts/build.mjs" project/manifest.json
 ```
 
-修谱复用已确认封面时加 `--reuse-cover`。演示在 Skill 根目录 `npm run demo`。依赖安装 `npm install`，系统需要 DejaVu Sans和fontconfig（Linux可安装fonts-dejavu-core、fontconfig）。中文封面提供合法字体文件与字族名。包内不含用户截图、第三方曲谱或字体。
+修谱复用已确认封面时加 `--reuse-cover`，先实看当前署名并记`audit.cover_credit_verified=true`。演示在 Skill 根目录 `npm run demo`。依赖安装 `npm install`，系统需要 DejaVu Sans和fontconfig（Linux可安装fonts-dejavu-core、fontconfig）。中文封面提供合法字体文件与字族名，署名中的中文字形也必须支持。包内不含用户截图、第三方曲谱或字体。
 
 外观选择与全部默认值见 [customization.md](customization.md)。若用户未选择，不改变我们的默认风格。生成结果中 build-report.json 记录实际配置、尺寸和运行步骤；只把实际完成记入项目状态。失败后报告status=failed，不能交付混有旧页的目录冒充成功。
 

@@ -15,6 +15,7 @@ import sys
 from typing import Any
 
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from source_credit import score_credit, credit_cover
 
 
 CANVAS = (1920, 1080)
@@ -88,6 +89,7 @@ def video_stream(probe: dict[str, Any]) -> dict[str, Any]:
 
 
 def validate_manifest(data: dict[str, Any], base: Path) -> dict[str, Any]:
+    score_credit(data)
     for binary in ("ffmpeg", "ffprobe"):
         if not shutil.which(binary):
             fail(f"Required binary not found: {binary}")
@@ -176,6 +178,7 @@ def validate_manifest(data: dict[str, Any], base: Path) -> dict[str, Any]:
 
     return {
         "performance": str(performance),
+        "manifest_root": str(base),
         "cover": str(cover),
         "output": str(output),
         "duration": duration,
@@ -234,7 +237,7 @@ def render_layouts(data: dict[str, Any], validated: dict[str, Any], build_dir: P
     layouts.mkdir(parents=True, exist_ok=True)
     cover = Image.open(validated["cover"])
     bg = base_background(cover)
-    cover_tile = cover_fill(cover, (COVER_BOX[2], COVER_BOX[3]))
+    cover_tile = credit_cover(cover_fill(cover, (COVER_BOX[2], COVER_BOX[3])), data, validated["manifest_root"])
     song = str((data.get("project") or {}).get("song", "SKY PLAY ALONG"))
     title_font = font(28, bold=True)
     geometry: dict[str, Any] = {}
@@ -269,7 +272,7 @@ def render_layouts(data: dict[str, Any], validated: dict[str, Any], build_dir: P
     start = (data.get("video") or {}).get("end_card_start")
     if start is not None:
         end = bg.copy()
-        tile = cover_fill(cover, (720, 720))
+        tile = credit_cover(cover_fill(cover, (720, 720)), data, validated["manifest_root"])
         end.paste(tile, (600, 70))
         draw = ImageDraw.Draw(end, "RGBA")
         draw.rectangle((586, 56, 1334, 804), outline=(216, 236, 255, 165), width=4)

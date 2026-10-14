@@ -62,6 +62,8 @@
 
 这是两个带脚本、规则与示例的 Skill，不是独立手机 App。需要一个能读取素材、运行本地程序的 AI 代理环境。
 
+提供琴谱截图时，请同时告诉代理原谱作者，或保留原始署名。两套Skill均要求确认原谱作者；封面用小号`by:作者名`保留署名。排版者和演奏者另行区分，作者不明时先询问。详细字段见琴谱清单与视频模板。
+
 ```bash
 git clone https://github.com/Sunspark888/7.22-codex-project-workflow.git
 cd 7.22-codex-project-workflow/sky-music-workshop

@@ -78,6 +78,7 @@ npm run demo
 ## 实际制作
 
 1. 保留原图与来源顺序。
+   同时确认原谱作者，填写`score_source.author`与`score_source.basis`；作者不明时代理会询问，不能猜。封面必须以小号显示`by:作者名`，例如确认为sky荼苏时写`by:sky荼苏`，该姓名不是默认值。
 2. 按原图转录事件，再独立复读一次，保存来源账本。
 3. 处理差异并记录；读不清的地方具体指出，不补造音符。
 4. 准备封面底图和字体，运行：
@@ -87,6 +88,8 @@ node /path/to/sky-15-key-score/scripts/build.mjs /path/to/project/manifest.json
 ```
 
 修谱复用原封面时加 `--reuse-cover`。输出中的 `build-report.json` 记录尺寸、步骤和文件。`rendered` 表示脚本生成完成，交付前仍要看图核对。
+
+复用前实看现有封面含当前`by:原谱作者`，再记录`audit.cover_credit_verified=true`。缺作者或确认依据时构建会停止；作者名不是作曲、演奏或排版署名的替代。
 
 ## 实测记录（2026-10-15，北京时间）
 
@@ -100,4 +103,4 @@ node /path/to/sky-15-key-score/scripts/build.mjs /path/to/project/manifest.json
 
 可编码的排版与时间规则交给脚本；模型负责从来源读取事实、选择已经定义好的参数，并处理疑点。所有历史失败整理为[失败案例与固定处理](../skills/sky-15-key-score/references/failure-cases.md)。新版执行不需要翻旧聊天，也不依赖作者电脑上的绝对路径。
 
-版本：**1.12.0**。代码与文档遵循仓库 [MIT License](../../LICENSE)；不授予歌曲、原始编配、照片或第三方字体的使用权。
+版本：**1.13.0**。10月15日增加输入作者与封面署名要求；上面的24项测试和Linux记录属于此前1.12.0实测范围。代码与文档遵循仓库 [MIT License](../../LICENSE)；不授予歌曲、原始编配、照片或第三方字体的使用权。

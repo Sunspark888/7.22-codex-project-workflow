@@ -1,5 +1,5 @@
 // Canonical musical layout stays 2160 x 1080. Output uses uniform scaling only.
-export const revision='1.12.0';
+export const revision='1.13.0';
 export const palettes={
   default:['#e9f5ff','#fff8f4','#edf4ff'],
   mint:['#edf8ed','#f8fcf0','#e7f3ef'],

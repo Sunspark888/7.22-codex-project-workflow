@@ -27,6 +27,7 @@
 `render_cursor_video.py PROJECT.json --validate-only` 先检查；去掉参数后渲染。完整模板见 `cursor-project-example.json`。消费以下字段：
 
 - `cover`、`pages`：封面与 P1 起连续单页路径；脚本按 2160×1080 坐标系统等比显示。
+- `score_source`：强制对象，`author`为已确认的原谱作者，`basis`记录确认依据；中文署名提供`font_file`。封面在最终尺寸排入`by:作者名`，不从演奏者或宣传水印猜作者。
 - `segments`：有序 `{path,start,end}`；秒数必须来自已审核剪辑，各段为相同录屏布局。当前渲染器适用于 736×512 或相同比例布局；设备/UI/裁切不同须先调整解码与琴键映射，不能强行拉伸。
 - `audio`：按相同剪辑清单生成、对齐且包含收尾的音轨文件。
 - `anchors`：严格递增 `{t,page,row,top,x}`，page 从 0 起；x/top 为原谱 2160×1080 坐标，row 区分所在行。

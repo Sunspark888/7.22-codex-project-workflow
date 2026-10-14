@@ -1,5 +1,9 @@
 {
   "schema_version": 2,
+  "score_source": {
+    "author": "Sky Music Workshop (synthetic demo)",
+    "basis": "Bundled synthetic fixture; no third-party score is used"
+  },
   "song": {
     "title": "Sky Demo"
   },

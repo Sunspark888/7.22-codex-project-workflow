@@ -5,6 +5,10 @@
 ```json
 {
   "schema_version": 2,
+  "score_source": {
+    "author": "sky荼苏",
+    "basis": "示例：用户明确确认该截图的原谱作者；实际任务必须替换为真实依据"
+  },
   "song": {
     "title": "Leave Me Alone",
     "subtitle": "寂寞作伴",
@@ -52,6 +56,9 @@
 ## 字段
 
 - `song.title`：必填，封面和页眉标题。
+- `score_source.author`：强制，已确认的原谱作者显示名，只填姓名/账号，不带 `by:`。上面的 sky荼苏仅示范格式，不是默认作者；未知先询问，不能填“未知/待确认”后交付。
+- `score_source.basis`：强制，原图可见署名、原始来源链接或用户确认等实际依据。多来源先分别确认作者，涉及不同作者时完整列出，不只署排版者或演奏者。
+- 封面生成器自动排入 `by:作者名`。复用已有封面前实看当前署名，记入 `audit.cover_credit_verified=true`；缺此核对不得用 `--reuse-cover` 跳过署名。
 - `song.subtitle`：可选，中文名或副标题。
 - `song.start_note`：可选；原谱或用户明确提供时填写。缺失时封面自动省略，不能填默认值。
 - `output_dir`：输出目录。

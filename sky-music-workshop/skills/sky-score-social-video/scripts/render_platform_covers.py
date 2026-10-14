@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from source_credit import score_credit, credit_cover
 
 
 VARIANTS = {
@@ -109,6 +110,7 @@ def main() -> int:
     try:
         manifest_path = args.manifest.resolve()
         data = json.loads(manifest_path.read_text(encoding="utf-8"))
+        credit = score_credit(data)
         base = manifest_path.parent
         cfg = data.get("social_cover") or {}
         if not cfg.get("enabled", True):
@@ -138,6 +140,7 @@ def main() -> int:
             if output.exists() and not overwrite:
                 fail(f"Output exists and overwrite is false: {output}")
             image, artwork_box = render(source, size, headline, subtitle, font_path)
+            image = credit_cover(image, data, base)
             atomic_png(image, output)
             records.append({
                 "variant": label, "path": str(output), "width": size[0], "height": size[1],
@@ -146,6 +149,7 @@ def main() -> int:
         report = {
             "status": "passed", "source": str(source_path),
             "headline": headline, "subtitle": subtitle, "outputs": records,
+            "source_credit": credit,
             "note": "Confirm each current app crop preview before publishing.",
         }
         report_path = output_dir / "covers.qc.json"
