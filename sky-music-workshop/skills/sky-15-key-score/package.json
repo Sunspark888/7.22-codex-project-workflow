@@ -1,0 +1,16 @@
+{
+  "name": "sky-15-key-score",
+  "version": "1.12.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "demo": "node scripts/build.mjs examples/demo/manifest.json --demo"
+  },
+  "dependencies": {
+    "sharp": "0.34.5"
+  }
+}

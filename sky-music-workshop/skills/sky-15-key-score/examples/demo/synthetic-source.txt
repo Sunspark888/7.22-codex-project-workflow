@@ -1,0 +1,9 @@
+SYNTHETIC FIXTURE ONLY — no real song and no source-image audit.
+Two systems, four measures per system, eight slots per measure.
+Each row's time is local, 0–31. Adjacent global times differing by 1 connect.
+Row 1: 6=3; 7=5; 8=1'; 9=4'; 30=2; 31=5'.
+Row 2: 0=2'; 1=1+4+1''; 4=3'; 7=7; 24=6; 25=6'.
+Cross-measure chain: row 1 times 6,7,8,9.
+Cross-row chain: row 1 times 30,31 -> row 2 times 0,1.
+Long gaps: 9→30 = 21; row 2 gaps 1→4 = 3, 4→7 = 3,
+7→24 = 17, including two complete empty measures (8–23).

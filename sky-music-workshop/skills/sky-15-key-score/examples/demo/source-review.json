@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "method": "synthetic_fixture",
+  "synthetic_fixture": true,
+  "review_note": "Synthetic specification fixture; not a real song or screenshot recognition test.",
+  "unresolved": [],
+  "sources": [
+    {
+      "id": "synthetic",
+      "path": "synthetic-source.txt"
+    }
+  ],
+  "systems": [
+    {
+      "id": "synthetic-row1",
+      "source_id": "synthetic",
+      "source_row": 1,
+      "events": [
+        {
+          "id": "r1-t6",
+          "time": 6,
+          "notes": [
+            "3"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r1-t7",
+          "time": 7,
+          "notes": [
+            "5"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r1-t8",
+          "time": 8,
+          "notes": [
+            "1'"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r1-t9",
+          "time": 9,
+          "notes": [
+            "4'"
+          ],
+          "rapid_to_next": false
+        },
+        {
+          "id": "r1-t30",
+          "time": 30,
+          "notes": [
+            "2"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r1-t31",
+          "time": 31,
+          "notes": [
+            "5'"
+          ],
+          "rapid_to_next": true
+        }
+      ]
+    },
+    {
+      "id": "synthetic-row2",
+      "source_id": "synthetic",
+      "source_row": 2,
+      "events": [
+        {
+          "id": "r2-t0",
+          "time": 0,
+          "notes": [
+            "2'"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r2-t1",
+          "time": 1,
+          "notes": [
+            "1",
+            "4",
+            "1''"
+          ],
+          "rapid_to_next": false
+        },
+        {
+          "id": "r2-t4",
+          "time": 4,
+          "notes": [
+            "3'"
+          ],
+          "rapid_to_next": false
+        },
+        {
+          "id": "r2-t7",
+          "time": 7,
+          "notes": [
+            "7"
+          ],
+          "rapid_to_next": false
+        },
+        {
+          "id": "r2-t24",
+          "time": 24,
+          "notes": [
+            "6"
+          ],
+          "rapid_to_next": true
+        },
+        {
+          "id": "r2-t25",
+          "time": 25,
+          "notes": [
+            "6'"
+          ],
+          "rapid_to_next": false
+        }
+      ]
+    }
+  ],
+  "regressions": [
+    {
+      "id": "cross-measure",
+      "checks": [
+        {
+          "event_id": "r1-t7",
+          "time": 7,
+          "rapid_to_next": true
+        },
+        {
+          "event_id": "r1-t8",
+          "time": 8,
+          "rapid_to_next": true
+        }
+      ]
+    },
+    {
+      "id": "cross-row",
+      "checks": [
+        {
+          "event_id": "r1-t31",
+          "time": 31,
+          "rapid_to_next": true
+        },
+        {
+          "event_id": "r2-t0",
+          "time": 0,
+          "rapid_to_next": true
+        },
+        {
+          "event_id": "r2-t1",
+          "notes": [
+            "1",
+            "4",
+            "1''"
+          ],
+          "rapid_to_next": false
+        }
+      ]
+    },
+    {
+      "id": "long-pause",
+      "checks": [
+        {
+          "event_id": "r1-t9",
+          "rapid_to_next": false
+        },
+        {
+          "event_id": "r2-t7",
+          "time": 7,
+          "rapid_to_next": false
+        },
+        {
+          "event_id": "r2-t24",
+          "time": 24,
+          "rapid_to_next": true
+        }
+      ]
+    }
+  ]
+}

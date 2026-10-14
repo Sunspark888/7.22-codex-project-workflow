@@ -1,0 +1,54 @@
+{
+  "project": {
+    "song": "示例曲名",
+    "version": "v01"
+  },
+  "known_issues": [
+    {"id": "P3-tail", "scope": "P3 后半段", "description": "用户确认的局部内容问题", "decision": "deferred"}
+  ],
+  "assets": {
+    "performance_video": "assets/performance.mp4",
+    "cover": "assets/00_示例曲名_封面.png",
+    "pages": [
+      {"page": 1, "path": "assets/01_示例曲名_P1.png", "start": 0.0, "end": 30.1},
+      {"page": 2, "path": "assets/02_示例曲名_P2.png", "start": 30.1, "end": 60.1},
+      {"page": 3, "path": "assets/03_示例曲名_P3.png", "start": 60.1, "end": 90.1},
+      {"page": 4, "path": "assets/04_示例曲名_P4.png", "start": 90.1, "end": 100.6}
+    ]
+  },
+  "video": {
+    "duration": 100.6,
+    "fps": 30,
+    "preview_seconds": 12.0,
+    "opening_hook": "新手也能直接跟的十五键谱",
+    "opening_hook_seconds": 3.0,
+    "end_card_start": 97.4,
+    "end_card_title": "收藏 · 下次直接跟弹",
+    "end_card_subtitle": "关注我，继续更新新手友好谱"
+  },
+  "performance": {
+    "crop_normalized": [0.0, 0.0, 1.0, 1.0],
+    "key_centers_normalized": [
+      [0.2989, 0.1719], [0.3995, 0.1719], [0.5, 0.1719], [0.6005, 0.1719], [0.7011, 0.1719],
+      [0.2989, 0.3105], [0.3995, 0.3105], [0.5, 0.3105], [0.6005, 0.3105], [0.7011, 0.3105],
+      [0.2989, 0.4492], [0.3995, 0.4492], [0.5, 0.4492], [0.6005, 0.4492], [0.7011, 0.4492]
+    ]
+  },
+  "social_cover": {
+    "enabled": true,
+    "source": "assets/00_示例曲名_封面.png",
+    "output_dir": "output/covers",
+    "overwrite": false,
+    "headline": "",
+    "subtitle": ""
+  },
+  "row_timeline": [
+    {"page": 1, "row": 1, "start": 0.0, "end": 10.0},
+    {"page": 1, "row": 2, "start": 10.0, "end": 20.0},
+    {"page": 1, "row": 3, "start": 20.0, "end": 30.1}
+  ],
+  "output": {
+    "path": "output/示例曲名_光遇十五键跟弹_横屏_v01.mp4",
+    "overwrite": false
+  }
+}

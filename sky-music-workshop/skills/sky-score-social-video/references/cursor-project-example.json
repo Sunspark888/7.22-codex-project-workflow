@@ -1,0 +1,70 @@
+{
+  "project": {
+    "song": "示例曲名",
+    "version": "v01"
+  },
+  "cover": "assets/cover.png",
+  "pages": [
+    "assets/P1.png",
+    "assets/P2.png"
+  ],
+  "segments": [
+    {
+      "path": "assets/main.mp4",
+      "start": 0,
+      "end": 8
+    },
+    {
+      "path": "assets/retake.mp4",
+      "start": 2,
+      "end": 6
+    }
+  ],
+  "audio": "assets/edited_audio.wav",
+  "anchors": [
+    {
+      "t": 0,
+      "page": 0,
+      "row": 0,
+      "top": 98,
+      "x": 150
+    },
+    {
+      "t": 4,
+      "page": 0,
+      "row": 0,
+      "top": 98,
+      "x": 1900
+    },
+    {
+      "t": 8,
+      "page": 1,
+      "row": 0,
+      "top": 98,
+      "x": 150
+    },
+    {
+      "t": 11,
+      "page": 1,
+      "row": 0,
+      "top": 98,
+      "x": 1900,
+      "motion": "hold"
+    }
+  ],
+  "output": "output/示例_v01.mp4",
+  "overwrite": false,
+  "cursor_color": "#E65B63",
+  "known_issues": [],
+  "social_cover": {
+    "source": "assets/cover.png",
+    "output_dir": "output/covers",
+    "overwrite": false
+  },
+  "recovery": {
+    "status": "template_replace_all_example_timings",
+    "source_identities": [],
+    "edit_decisions": [],
+    "visual_audio_review": []
+  }
+}

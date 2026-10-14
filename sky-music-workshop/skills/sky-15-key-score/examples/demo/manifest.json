@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "song": {
+    "title": "Sky Demo"
+  },
+  "output_dir": "./final",
+  "canvas": {
+    "width": 2160,
+    "height": 1080
+  },
+  "slots_per_measure": 8,
+  "audit": {
+    "source_review": "./source-review.json",
+    "event_transcription_verified": true,
+    "rapid_candidates_verified": true,
+    "source_page_count": 1,
+    "source_system_count": 2,
+    "source_note_count": 14,
+    "source_dot_count": 8,
+    "regression_checks": [
+      "cross-measure",
+      "cross-row",
+      "long-pause"
+    ]
+  },
+  "pages": [
+    {
+      "label": "P1",
+      "systems": [
+        {
+          "source_system_id": "synthetic-row1",
+          "measures": [
+            [
+              {
+                "slot": 6,
+                "notes": [
+                  "3"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r1-t6"
+              },
+              {
+                "slot": 7,
+                "notes": [
+                  "5"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r1-t7"
+              }
+            ],
+            [
+              {
+                "slot": 0,
+                "notes": [
+                  "1'"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r1-t8"
+              },
+              {
+                "slot": 1,
+                "notes": [
+                  "4'"
+                ],
+                "rapid_to_next": false,
+                "source_event_id": "r1-t9"
+              }
+            ],
+            [],
+            [
+              {
+                "slot": 6,
+                "notes": [
+                  "2"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r1-t30"
+              },
+              {
+                "slot": 7,
+                "notes": [
+                  "5'"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r1-t31"
+              }
+            ]
+          ]
+        },
+        {
+          "source_system_id": "synthetic-row2",
+          "measures": [
+            [
+              {
+                "slot": 0,
+                "notes": [
+                  "2'"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r2-t0"
+              },
+              {
+                "slot": 1,
+                "notes": [
+                  "1",
+                  "4",
+                  "1''"
+                ],
+                "rapid_to_next": false,
+                "source_event_id": "r2-t1"
+              },
+              {
+                "slot": 4,
+                "notes": [
+                  "3'"
+                ],
+                "rapid_to_next": false,
+                "source_event_id": "r2-t4"
+              },
+              {
+                "slot": 7,
+                "notes": [
+                  "7"
+                ],
+                "rapid_to_next": false,
+                "source_event_id": "r2-t7"
+              }
+            ],
+            [],
+            [],
+            [
+              {
+                "slot": 0,
+                "notes": [
+                  "6"
+                ],
+                "rapid_to_next": true,
+                "source_event_id": "r2-t24"
+              },
+              {
+                "slot": 1,
+                "notes": [
+                  "6'"
+                ],
+                "rapid_to_next": false,
+                "source_event_id": "r2-t25"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "demo": true
+}

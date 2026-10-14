@@ -1,0 +1,13 @@
+interface:
+  display_name: 光遇琴谱视频发布
+  short_description: 剪辑多段光遇演奏、同步跟弹游标，交付四平台视频封面和发布文案
+  default_prompt: 把原始演奏剪辑成同步琴谱视频，并交付四平台封面与文案。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,13 @@
+interface:
+  display_name: 光遇十五键琴谱
+  short_description: 统一琴键音区、同时音与节奏排版，支持自选尺寸和封面风格的光遇琴谱整理
+  default_prompt: 使用 $sky-15-key-score 整理这些光遇琴谱截图，默认使用标准版式，按我的要求调整尺寸和封面。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
